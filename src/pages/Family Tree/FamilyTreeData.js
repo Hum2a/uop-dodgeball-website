@@ -1,20 +1,60 @@
-const familyTreeData = [
+const initialFamilyTreeData = [
     {
-      name: "John Doe",
+      name: "Lydia Davies",
       children: [
-        {
-          name: "Jane Doe",
-          children: [
-            { name: "Sam Doe" },
-            { name: "Ella Doe" }
-          ]
-        },
-        {
-          name: "Mike Doe",
-          children: [
-            { name: "Tom Doe" }
-          ]
-        }
+          {
+              name: "Iona Pidgen"
+          },
+          {
+              name: "Riley Hagen",
+              children: [
+              { name: "Ethan Humphries" },
+              { 
+                  name: "Mikel Walsh",
+                  children: [
+                      { name: "Ryan Constable" },
+                      { name: "Jae Taylor" },
+                      { name: "Alex Muffet" }
+                  ]
+              },
+              { 
+                  name: "Adam Case-Legge",
+                  children: [
+                      { 
+                          name: "Chris Baynes",
+                          children: [
+                              { name: "Ella Silvester" },
+                              { name: "Tom Lacey" }
+                          ]
+                      },
+                      {
+                          name: "Sam Richardon",
+                          children: [ 
+                              { name: "Maeve Cotter" },
+                          ]
+                      },
+                      {
+                          name: "Ben Barthomolew",
+                          children: [
+                              { name: "Gracie Pratchett" },
+                              { name: "Havish Patel" }
+                          ]
+                      }
+                  ]
+              }
+              ]
+          },
+          {
+              name: "Erin Good",
+              children: [
+              { 
+                  name: "Alex Stratton",
+                  children: [
+                      { name: "Shalika De Freitas" }
+                  ],
+              }
+              ]
+          }
       ]
     },
     {
@@ -37,6 +77,5 @@ const familyTreeData = [
       ]
     }
   ];
-  
-  export default familyTreeData;
-  
+
+  export default initialFamilyTreeData;
