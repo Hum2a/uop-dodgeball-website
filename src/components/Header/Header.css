@@ -1,0 +1,30 @@
+header {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    padding: 20px; /* Add padding */
+    text-align: center; /* Center align text */
+  }
+  
+  h1 {
+    margin: 0; /* Remove default margin */
+  }
+  
+  nav ul {
+    list-style-type: none; /* Remove bullet points from the list */
+    padding: 0; /* Remove default padding */
+  }
+  
+  nav ul li {
+    display: inline; /* Display list items horizontally */
+    margin-right: 20px; /* Add space between list items */
+  }
+  
+  nav ul li a {
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+  

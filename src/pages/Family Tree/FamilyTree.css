@@ -1,0 +1,62 @@
+.family-tree {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; /* Horizontal main axis for root nodes */
+    align-items: flex-start; /* Align items at the start vertically */
+    height: 100%;
+    overflow-x: auto; /* Allows scrolling horizontally if needed */
+    padding: 20px; /* Adds some padding around the tree for better view */
+}
+
+.node-container {
+    display: flex;
+    flex-direction: row; /* Horizontal layout for each generation */
+    align-items: center; /* Align children at the start vertically */
+    margin-bottom: 40px; /* Space between generations */
+    position: relative; /* Position relative for absolute positioning of lines */
+}
+
+.node {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10%;
+    position: relative;
+}
+
+.children {
+    display: flex;
+    flex-direction: column; /* Siblings stack vertically */
+    position: relative;
+    padding-left: 20px; /* Ensures children are indented from the line */
+}
+
+/* Line from the parent node to the children */
+.node::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%; /* Starts at the right of the node */
+    width: 40px; /* Length of the horizontal line */
+    height: 2px;
+    background-color: grey;
+    z-index: 1;
+}
+
+/* Vertical line connecting siblings directly under the horizontal line */
+.children::before {
+    content: '';
+    position: absolute;
+    height: calc(100%); /* Adjust height to cover all children */
+    width: 2px;
+    background-color: grey;
+    left: 0px; /* Line starts where the children padding starts */
+    top: 0; /* Align with the top of the first child */
+}
+
+.node + .children {
+    margin-top: 20px; /* Adjust spacing if necessary */
+}
