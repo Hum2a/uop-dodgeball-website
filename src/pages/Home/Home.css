@@ -5,14 +5,18 @@
   }
   
   header {
-    background-color: #222;
+    background-color: #271c2b;
     color: #fff;
     padding: 20px;
+    text-align: center;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
   }
   
   header h1 {
     margin: 0;
     font-size: 2.5rem;
+    color: antiquewhite;
   }
   
   nav ul {

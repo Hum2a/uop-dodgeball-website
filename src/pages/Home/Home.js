@@ -12,6 +12,7 @@ const Home = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/family-tree">Family Tree</Link></li>
             <li><Link to="/history">History</Link></li>
+            <li><Link to="/committee">Committee</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </nav>
