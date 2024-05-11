@@ -11,13 +11,9 @@ const FamilyTree = () => {
     const newNode = { name: childName, children: [] };
 
     // Function to recursively add a new child to the matching parent node
-    const addNode = (node) => {
+    const addNode = node => {
       if (node.name === parentNode.name) {
-        if (node.children) {
-          node.children.push(newNode);
-        } else {
-          node.children = [newNode];
-        }
+        node.children = [...(node.children || []), newNode];
         return;
       }
       node.children && node.children.forEach(addNode);
@@ -31,10 +27,15 @@ const FamilyTree = () => {
   };
 
   return (
-    <div className="family-tree">
-      {familyTreeData.map((rootNode, index) => (
-        <FamilyTreeNode key={index} node={rootNode} addChild={addChild} />
-      ))}
+    <div>
+      <div className="family-tree">
+        <div className="header">
+          Dodgeball Family Tree
+        </div>
+        {familyTreeData.map((rootNode, index) => (
+          <FamilyTreeNode key={index} node={rootNode} addChild={addChild} s generation={0}/>
+        ))}
+      </div>
     </div>
   );
 };

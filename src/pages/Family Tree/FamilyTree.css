@@ -1,11 +1,34 @@
+.header {
+    width: 100%;
+    height: auto;
+    background-color: powderblue;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    padding: 50px;
+    font-size: xxx-large;
+    text-align: center;
+    font-family: fantasy;
+    position: sticky;
+}
+
+.title {
+    font-size: 712;
+    font-weight: 5000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: plum;
+    align-self: center;
+}
 .family-tree {
     display: flex;
-    justify-content: center;
-    flex-direction: column; /* Horizontal main axis for root nodes */
-    align-items: flex-start; /* Align items at the start vertically */
-    height: 100%;
-    overflow-x: auto; /* Allows scrolling horizontally if needed */
-    padding: 20px; /* Adds some padding around the tree for better view */
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: auto; /* Allow scrolling */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background */
+    min-height: 2000px; /* Adjust based on your content size */
+    min-width: 3000px; /* Adjust based on your content size */
+    position: relative;
 }
 
 .node-container {
@@ -14,49 +37,58 @@
     align-items: center; /* Align children at the start vertically */
     margin-bottom: 40px; /* Space between generations */
     position: relative; /* Position relative for absolute positioning of lines */
+    width: 100%;
+    border-bottom-color: #388E3C;
+    border-bottom-width: 10px;
 }
 
 .node {
+    position: relative;
+    width: 100px;
+    height: 50px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    margin: 5px;
     padding: 10px;
     border: 1px solid black;
-    border-radius: 10%;
-    position: relative;
+    border-radius: 25%;
+    background-color: aliceblue;
 }
 
 .children {
     display: flex;
     flex-direction: column; /* Siblings stack vertically */
     position: relative;
-    padding-left: 20px; /* Ensures children are indented from the line */
+    padding-left: 40px; /* Adjust to match the layout */
+    margin-left: 20px; /* Ensures space for lines */
 }
-
-/* Line from the parent node to the children */
-.node::after {
+/* Styling for lines */
+.node::after, .children::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 100%; /* Starts at the right of the node */
-    width: 40px; /* Length of the horizontal line */
-    height: 2px;
     background-color: grey;
-    z-index: 1;
 }
 
-/* Vertical line connecting siblings directly under the horizontal line */
+.node::after {
+    top: 50%;
+    left: 100%;
+    width: 25px; /* Length of the horizontal line */
+    height: 2px;
+}
+
 .children::before {
     content: '';
     position: absolute;
-    height: calc(100%); /* Adjust height to cover all children */
+    left: 0;
+    top: 0;
+    bottom: 0;
     width: 2px;
     background-color: grey;
-    left: 0px; /* Line starts where the children padding starts */
-    top: 0; /* Align with the top of the first child */
+    transform: translateX(-50%);
 }
 
 .node + .children {
     margin-top: 20px; /* Adjust spacing if necessary */
 }
+

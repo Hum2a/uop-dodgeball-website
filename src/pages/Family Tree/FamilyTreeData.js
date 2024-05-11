@@ -1,12 +1,11 @@
 const initialFamilyTreeData = [
-
     {
         name: "Jenni Elegard",
         children: [
             {
                 name: "Alice Duggan",
                 children: [
-                    { name: "A;ex Rpbertshaw" },
+                    { name: "Alex Robertshaw" },
                     { name: "Lien Michiels" },
                 ],
             },
@@ -522,7 +521,7 @@ const initialFamilyTreeData = [
                                                                         name: "Ollie Bennet"
                                                                     },
                                                                     {
-                                                                        name: "Ellie Handball"
+                                                                        name: "Ellie Larkann-Kay"
                                                                     },
                                                                     {
                                                                         name: "Humza Butt",
