@@ -518,7 +518,7 @@ const initialFamilyTreeData = [
                                                                     name: "Nat Wannapon",
                                                                     children: [
                                                                     {
-                                                                        name: "Ollie Bennet"
+                                                                        name: "Ollie Bennett"
                                                                     },
                                                                     {
                                                                         name: "Ellie Larkann-Kay"
