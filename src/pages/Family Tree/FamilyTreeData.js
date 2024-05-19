@@ -1,750 +1,143 @@
-const initialFamilyTreeData = [
-    {
-        name: "Jenni Elegard",
-        children: [
-            {
-                name: "Alice Duggan",
-                children: [
-                    { name: "Alex Robertshaw" },
-                    { name: "Lien Michiels" },
-                ],
-            },
-            {
-                name: "Matt Horlock",
-                children: [
-                    { name: "Adam Wardill" },
-                    { name: "Michael Mean" },
-                    {
-                        name: "Dimitri Papazacharlou",
-                        children: [
-                            { name: "Kine Rydjord" },
-                            { name: "Chris Smith" },
-                            { name: "Pete Barczak" },
-                            { name: "Hannah Jary" },
-                            { name: "George Bushby" },
-                        ]
-                    }
-                ]
-            },
-            {
-                name: "John Burkitt",
-                children: [
-                    { name: "Jake HIllier" },
-                    { name: "Lamal Hersheson" },
-                    {
-                        name: "Will King",
-                        children: [
-                            { 
-                                name: "Richard Bailey" ,
-                                children: [
-                                    { name: "Luke Jeffries" },
-                                    { name: "Sapphire Payne" },
-                                ]
-                            },
-                            { 
-                                name: "Harry Lewis-Irlam",
-                                children: [
-                                    { name: "Ed Williams" },
-                                    { name: "Vusa Ndlovu" },
-                                    { name: "Matt Davies" },
-                                ]
-                            },
-                            {
-                                name: "Joe Corwan",
-                                children: [
-                                    { name: "Tom Nash" },
-                                    {
-                                        name: "Sam Sherwood",
-                                        children: [
-                                            { name: "Jack Coope" },
-                                            { 
-                                                name: "Tom Grainger",
-                                                children: [
-                                                    { name: "Natalie Lane" },
-                                                    {
-                                                        name: "Kieran Parker",
-                                                        children: [
-                                                            { name: "Sam Smyth" },
-                                                            {
-                                                                name: "Paulina Kingmane ",
-                                                                children: [
-                                                                    { name: "Charlie King" },
-                                                                    { name: "Emmanuel Ojo" },
-                                                                ]
-                                                            },
-                                                            {
-                                                                name: "Joshua Hjowell",
-                                                                children: [
-                                                                    { name: "Ryan Tomilnson" },
-                                                                    { name: "Tom Honer" },
-                                                                    { name: "Anish Gurung" },
-                                                                ]
-                                                            },
-                                                            { name: "Harry Ellis" },
-                                                            {
-                                                                name: "Liam O'Shea",
-                                                                children: [
-                                                                    { name: "Richard Ansell" },
-                                                                    { name: "Alex Gargrave" },
-                                                                    {
-                                                                        name: "Ioan Ekland",
-                                                                        children: [
-                                                                            { name: "Belal Ouachan" },
-                                                                            {
-                                                                                name: "Matthew Mulvaney",
-                                                                                children: [
-                                                                                    { name: "Raful" },
-                                                                                    {
-                                                                                        name: "Will Moore",
-                                                                                        children: [
-                                                                                            {
-                                                                                                name: "Carwyn Draycott",
-                                                                                                children: [
-                                                                                                    { name: "Felix Rhode" }
-                                                                                                ]
-                                                                                            }
-                                                                                        ]
-
-                                                                                    },
-                                                                                    {
-                                                                                        name: "Callum Pegg",
-                                                                                        children: [
-                                                                                            { name: "Patrick Wellings" },
-                                                                                            { name: "Carlos McFarvey" },
-                                                                                            { name: "Bracker Payne" }
-                                                                                        ]
-                                                                                    },
-                                                                                ]
-                                                                            }
-                                                                        ] 
-                                                                    }
-                                                                ]
-                                                            }
-                                                        ] 
-
-                                                    }
-                                                ] 
-                                            },
-                                            {
-                                                name: "Alex Brown",
-                                                children: [
-                                                    { name: "Holly Arrowsmith" },
-                                                    { name: "Gina Harris" }
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        name: "Will Morgan",
-                                        children: [
-                                            { name: "Ashley Young" },
-                                            {
-                                                name: "Jess Wright",
-                                                children: [
-                                                    { name: "Lauma Lanska" }
-                                                ]
-                                            },
-                                            {
-                                                name: "Edward (Woody) Wilcock",
-                                                children: [
-                                                    { name: "Matt Sycamore" },
-                                                    { name: "Sipi Panchalingam" },
-                                                    {
-                                                        name: "Matt Thoburn",
-                                                        children: [
-                                                            {
-                                                                name: "Sam Matchen",
-                                                                children: [
-                                                                    { name: "Chelsea Galatola" },
-                                                                    { name: "Nicole Barney" },
-                                                                    { name: "Jason Micgillivray" },
-                                                                    { name: "George Mitchell" },
-                                                                ]
-                                                            }
-                                                        ] 
-
-                                                    },
-                                                    {
-                                                        name: "Chris Brainbridge",
-                                                        children: [
-                                                            {
-                                                                name: "Benji Wong",
-                                                                children: [
-                                                                    { name: "Adam Donnelly" }
-                                                                ]
-                                                            },
-                                                            {
-                                                                name: "Ed Fuller",
-                                                                children: [
-                                                                    { name: "Matt" },
-                                                                    { name: "Jack" },
-                                                                    { name: "Elliot" }
-                                                                ]
-                                                            },
-                                                            {
-                                                                name: "Cameron Mellor",
-                                                                children: [
-                                                                    { name: "Kai Hamilton" },
-                                                                    { name: "Jamie Davison" },
-                                                                    {
-                                                                        name: "Rhys Huckins",
-                                                                        children: [
-                                                                            {
-                                                                                name: "Matt Goodwin",
-                                                                                children: [
-                                                                                    {
-                                                                                        name: "Joseph Schulz",
-                                                                                        children: [
-                                                                                            { name: "Luke O'brien" },
-                                                                                            { name: "Oliver Sharp" },
-                                                                                            { name: "Halim Samad" },   
-                                                                                        ]
-                                                                                    }
-                                                                                ]
-                                                                            }
-                                                                        ] 
-                                                                    },
-                                                                    { name: "Charlotte Thursfield" },
-                                                                ]
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        name: "Ashley Watts",
-                        children: [
-                            { name: "Matt Law" },
-                            {
-                                name: "Joe Yearley",
-                                children: [
-                                    { name: "Remi Buckridan" },
-                                    { name: "Joe Greenleaf" },
-                                    { name: "Nathan Wall" },
-                                ]
-                            },
-                            {
-                                name: "Rhyan Naghee Reddy",
-                                children: [
-                                    {
-                                        name: "Sam Hollis" ,
-                                        children: [
-                                            { name: "Liam Oliver" },
-                                            { name: "Matt Wilson" },
-                                            { name: "Jarlath Tweedie" }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-
-    // The Killer Bravos
-    {
-        name: "Cara Myres",
-        children: [
-            { name: "Jonny Clegg" },
-            {
-                name: "Ian Hunt",
-                children: [
-                    { name: "Amy Phillips" },
-                    {
-                        name: "Luke Quinn",
-                        children: [
-                            { name: "Matt Swift" },
-                            { name: "Mitch Nunn" },
-                            {
-                                name: "Kieran Reck" ,
-                                children: [
-                                    { name: "Ellie Roach" },
-                                    { name: "Gwen Jones" },
-                                    { name: "Clair O'Brien" },
-                                    {
-                                        name: "Ben Campbell",
-                                        children: [
-                                            { name: "Ben Thomson" },
-                                            {
-                                                name: "Sara Whitehorn",
-                                                children: [
-                                                    { name: "Hattie Roxborough" },
-                                                    { name: "Manar Arikat" },
-                                                    {
-                                                        name: "Will Jefferies",
-                                                        children: [
-                                                            { name: "Will Hickling" },
-                                                            { 
-                                                                name: "Neil Luscombe",
-                                                                children: [
-                                                                    { name: "Joe Trigg"},
-                                                                    { name: "Kelly Charlton" },
-                                                                    {
-                                                                        name: "Kayleigh Marks",
-                                                                        children: [
-                                                                            { 
-                                                                                name: "Jayden Olden",
-                                                                                children: [
-                                                                                    { name: "Sam Le Marquand" },
-                                                                                    { name: "Zade Azzi " }
-                                                                                ]
-                                                                            }
-                                                                        ]
-                                                                    },
-                                                                    {
-                                                                        name: "Jamie Pain",
-                                                                        children: [
-                                                                            {
-                                                                                name: "Dan Lindsley",
-                                                                                children: [
-                                                                                    {
-                                                                                        name: "Kai Pettifer",
-                                                                                        children: [
-                                                                                            { name: "James Smith" },
-                                                                                            { name: "Hollie Hughes" },
-                                                                                            { name: "Matt Simmon" }
-                                                                                        ]
-                                                                                    },
-                                                                                    {
-                                                                                        name: "Megan Johns"
-                                                                                    }
-                                                                                ]
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                ]
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                name: "Heidi Erhe",
-                                children: [
-                                    { name: "Antonio Sawaya" },
-                                    { name: "Max Deeble" },
-                                    {
-                                        name: "Emily Seaman",
-                                        children: [
-                                            { name: "Callim Rail" },
-                                            { name: "Jordan Wright" },
-                                            {
-                                                name: "Ben Gooding",
-                                                children: [
-                                                    { name: "Alexi Antoniou" },
-                                                    {
-                                                        name: "Anna Elson" ,
-                                                        children: [
-                                                            {
-                                                                name: "Lauren Bostic",
-                                                                children: [
-                                                                    { name: "Henry Jackson" },
-                                                                    {
-                                                                        name: "Tara Morgan",
-                                                                        children: [
-                                                                            {
-                                                                                name: "Rebecca Downey",
-                                                                                children: [
-                                                                                    {
-                                                                                        name: "Crispin Low",
-                                                                                        children: [
-                                                                                            { name: "Rob Winton" }
-                                                                                        ] 
-                                                                                    }
-                                                                                ]
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                ]
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }            
-        ]
-    },
-    {
-        name: "Nick Conan",
-        children: [
-            {
-                name: "Carl Bashford",
-                children: [
-                    { name: "Josie Manley"},
-                    { 
-                        name: "Mark Forrester",
-                        children: [
-                            { name: "Howard Richards"},
-                            { name: "Joe Smith" },
-                            { name: "Matt Galvin"},
-                        ]
-                    },
-                    {
-                        name: "James Joy",
-                        children: [
-                            { name: "Matt Hollyhurst" },
-                            { name: "Siamak Rezazadeh" },
-                            { name: "Gemma Gorrie" },
-                            {
-                                name: "Roberto Payne",
-                                children: [
-                                    { name: "Steve Bates" },
-                                    {
-                                        name: "Lydia Davies",
-                                        children: [
-                                            {
-                                                name: "Iona Pidgen"
-                                            },
-                                            {
-                                                name: "Riley Hagen",
-                                                children: [
-                                                { name: "Ethan Humphries" },
-                                                { 
-                                                    name: "Mikel Walsh",
-                                                    children: [
-                                                        { name: "Ryan Constable" },
-                                                        { name: "Jae Taylor" },
-                                                        { name: "Alex Muffet" }
-                                                    ]
-                                                },
-                                                { 
-                                                    name: "Adam Case-Legge",
-                                                    children: [
-                                                        { 
-                                                            name: "Chris Baynes",
-                                                            children: [
-                                                                { name: "Ella Silvester" },
-                                                                { name: "Tom Lacey" }
-                                                            ]
-                                                        },
-                                                        {
-                                                            name: "Sam Richardon",
-                                                            children: [ 
-                                                                { name: "Maeve Cotter" },
-                                                            ]
-                                                        },
-                                                        {
-                                                            name: "Ben Barthomolew",
-                                                            children: [
-                                                                { name: "Gracie Pratchett" },
-                                                                { name: "Havish Patel" }
-                                                            ]
-                                                        }
-                                                    ]
-                                                }
-                                                ]
-                                            },
-                                            {
-                                                name: "Erin Good",
-                                                children: [
-                                                { 
-                                                    name: "Alex Stratton",
-                                                    children: [
-                                                        { name: "Shalika De Freitas" }
-                                                    ],
-                                                }
-                                                ]
-                                            }
-                                        ]
-                                      },
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-
-    /// The Bucknell Family
-
-    {
-        name: "Alex McFarlane",
-        children: [
-            { name: "Dan Warden" },
-            {
-                name: "Jamie Dartnell",
-                children: [
-                    { name: "Sully Butt" },
-                    {
-                        name: "Jonathan Montanarini",
-                        children: [
-                            { name: "Dom Wigginton" },
-                            {
-                                name: "Rhian Williams",
-                                children: [
-                                    { 
-                                        name: "Charlotte Skilton",
-                                        children: [
-                                            { name: "Sujan Jesuraja" },
-                                            {
-                                                name: "Meera Bhudia",
-                                                children: [
-                                                    { name: "Keeley Barnes" },
-                                                    {
-                                                        name: "Mariam Daniel",
-                                                        children: [
-                                                            { name: "Grace Alice" }
-                                                        ]
-                                                    },
-                                                    {
-                                                        name: "Charlotte Arulseelan",
-                                                        children: [
-                                                            { name: "Megan Shipton" },
-                                                            { name: "Clara Hanion" },
-                                                            {
-                                                                name: "Jacob Rufus",
-                                                                children: [ 
-                                                                {
-                                                                    name: "Nat Wannapon",
-                                                                    children: [
-                                                                    {
-                                                                        name: "Ollie Bennett"
-                                                                    },
-                                                                    {
-                                                                        name: "Ellie Larkann-Kay"
-                                                                    },
-                                                                    {
-                                                                        name: "Humza Butt",
-                                                                        children: [
-                                                                        { name: "Ali Hamm" },
-                                                                        { name: "James W" },
-                                                                        { name: "Caitlin Lubbe" }
-                                                                        ]
-                                                                    }
-                                                                    ]
-                                                                }
-                                                                ]
-                                                            }
-                                                        ]
-                                                        }
-                                                        ]
-                                                    }
-                                                ]
-                                            }
-                                        ] 
-                                    },
-                                    {
-                                        name: "Jessica Perez",
-                                        children: [
-                                            { name: "Asia Browne" },
-                                            {
-                                                name: "Jodie Hannaford" ,
-                                                children: [
-                                                    { name: "Victoria Patching" },
-                                                    {
-                                                        name: "Emili Satachan",
-                                                        children: [
-                                                            {
-                                                                name: "Kelsey Fernandes",
-                                                                children: [
-                                                                    { name: "Charlotte Minchell" }
-                                                                ]
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-    // The Jew-ish Army
-            {
-                name: "George Slade",
-                children: [
-                    {
-                        name: "Jacob Weller", 
-                        children: [
-                            {
-                                name: "Wes Richardson",
-                                children: [
-                                    { name: "Adam Farrell" },
-                                    { name: "Ollie Batchelor" },
-                                    { name: "Victoria Boyce" },
-                                    {
-                                        name: "Valeria Petrine",
-                                        children: [
-                                            { name: "Gary Alderman" },
-                                            { name: "Brigita Tamsauskaite" },
-                                            { name: "Sophie" },
-                                            {
-                                                name: "Simon Casswell",
-                                                children: [
-                                                    { name: "Tommy Lee-Nathan" },
-                                                ]
-                                            }
-                                        ]
-
-                                    },
-                                    { name: "Bryony Ford-Jones" }
-                                ]
-                            },
-                            {
-                                name: "Emilie White",
-                                children: [
-                                    {
-                                        name: "Leah Nozarick",
-                                        children: [
-                                            { name: "Ellie Jones" },
-                                            { name: "Joss Redler" },
-                                            {
-                                                name: "James Clarke",
-                                                children: [
-                                                    {
-                                                        name: "Leah McDonagh",
-                                                        children: [
-                                                            { name: "Alice Caulifield" },
-                                                            { name: "katherine Spicer" },
-                                                        ]
-                                                    },
-                                                    { name: "Becca Wright" },
-                                                    {
-                                                        name: "Nathen Hamilton West",
-                                                        children: [
-                                                            { name: "Russel GreenHaigh" },
-                                                        ]
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            { name: "Jack Morris" },
-                            {
-                                name: "Yannick Jarra",
-                                children: [
-                                    {
-                                        name: "Michael Feeney",
-                                        children: [
-                                            { name: "Harvey Smith" },
-                                            { name: "Callum Burns" },
-                                            { name: "Charlie O'Call" },
-                                            { name: "Lim Onn" }
-                                        ]
-                                    },
-                                    {
-                                        name: "Bhavesh Shah",
-                                        children: [
-                                            { name: "Matt Baker" },
-                                            { name: "Amy ???" }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-
-    // Gudgeon Family
-
-    {
-        name: "Nick Gudgeon",
-        children: [
-            {
-                name: "Jamie Dowie",
-                children: [
-                    {
-                        name: "Samantha Hoose",
-                        children: [
-                            { name: "Nico Marshalleck" },
-                            { name: "A;ex Wagner" },
-                            { name: "Same Jones" },
-                            { name: "Shannon Cruse" }
-                        ]
-                    },
-                    {
-                        name: "George Whitley",
-                        children: [
-                            { name: "James Greenough" },
-                            { name: "Same Elimers" },
-                            {
-                                name: "Scott Burd",
-                                children: [
-                                    {
-                                        name: "Scott Price",
-                                        children: [
-                                            {
-                                                name: "Tom Hall",
-                                                children: [
-                                                    { name: "Scott Hazelwood" },
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                        ]
-                    }
-                ]
-            }
-        ] 
-    },
-
-    {
-        name: "Johnny Crook",
-        children: [
-            { name: "Eoin O'Leary" },
-        ]
-    },
-
-    {
-        name: "Alex Rose",
-        children: [
-            {
-                name: "Matt Wraight",
-                children: [
-                    { name: "Georgie Watson" }
-                ]
-            }
-        ]
-    },
-
-    {
-        name: "Julian Zarzoso-Lowe",
-        children: [
-            { name: "Alice Whittal" },
-            {
-                name: "Callum Harrison",
-                children: [
-                    {
-                        name: "John Eveleigh",
-                        children: [
-                            { name: "Lauren Stockley" },
-                            { name: "Chris Thornton" },
-                            { name: "Jack Gale" },
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
-        ]
-
-
-  export default initialFamilyTreeData;
+export const FamilyTreeData = [
+    { id: 'Jenni Elegard', name: "Jenni Elegard", parents: [], spouses: [], children: ['Alice Duggan', 'Matt Horlock', 'John Burkitt'] },
+    { id: 'Alice Duggan', name: "Alice Duggan", parents: ['Jenni Elegard'], spouses: [], children: ['Alex Robertshaw', 'Lien Michiels'] },
+    { id: 'Matt Horlock', name: "Matt Horlock", parents: ['Jenni Elegard'], spouses: [], children: ['Adam Wardill', 'Michael Mean', 'Dimitri Papazacharlou'] },
+    { id: 'John Burkitt', name: "John Burkitt", parents: ['Jenni Elegard'], spouses: [], children: ['Jake HIllier', 'Lamal Hersheson', 'Will King'] },
+    { id: 'Alex Robertshaw', name: "Alex Robertshaw", parents: ['Alice Duggan'], spouses: [], children: [] },
+    { id: 'Lien Michiels', name: "Lien Michiels", parents: ['Alice Duggan'], spouses: [], children: [] },
+    { id: 'Adam Wardill', name: "Adam Wardill", parents: ['Matt Horlock'], spouses: [], children: [] },
+    { id: 'Michael Mean', name: "Michael Mean", parents: ['Matt Horlock'], spouses: [], children: [] },
+    { id: 'Dimitri Papazacharlou', name: "Dimitri Papazacharlou", parents: ['Matt Horlock'], spouses: [], children: ['Kine Rydjord', 'Chris Smith', 'Pete Barczak', 'Hannah Jary', 'George Bushby'] },
+    { id: 'Jake HIllier', name: "Jake HIllier", parents: ['John Burkitt'], spouses: [], children: [] },
+    { id: 'Lamal Hersheson', name: "Lamal Hersheson", parents: ['John Burkitt'], spouses: [], children: [] },
+    { id: 'Will King', name: "Will King", parents: ['John Burkitt'], spouses: [], children: ['Richard Bailey', 'Harry Lewis-Irlam', 'Joe Corwan'] },
+    { id: 'Kine Rydjord', name: "Kine Rydjord", parents: ['Dimitri Papazacharlou'], spouses: [], children: [] },
+    { id: 'Chris Smith', name: "Chris Smith", parents: ['Dimitri Papazacharlou'], spouses: [], children: [] },
+    { id: 'Pete Barczak', name: "Pete Barczak", parents: ['Dimitri Papazacharlou'], spouses: [], children: [] },
+    { id: 'Hannah Jary', name: "Hannah Jary", parents: ['Dimitri Papazacharlou'], spouses: [], children: [] },
+    { id: 'George Bushby', name: "George Bushby", parents: ['Dimitri Papazacharlou'], spouses: [], children: [] },
+    { id: 'Richard Bailey', name: "Richard Bailey", parents: ['Will King'], spouses: [], children: ['Luke Jeffries', 'Sapphire Payne'] },
+    { id: 'Harry Lewis-Irlam', name: "Harry Lewis-Irlam", parents: ['Will King'], spouses: [], children: ['Ed Williams', 'Vusa Ndlovu', 'Matt A Davies'] },
+    { id: 'Joe Corwan', name: "Joe Corwan", parents: ['Will King'], spouses: [], children: ['Tom Nash', 'Sam Sherwood'] },
+    { id: 'Luke Jeffries', name: "Luke Jeffries", parents: ['Richard Bailey'], spouses: [], children: [] },
+    { id: 'Sapphire Payne', name: "Sapphire Payne", parents: ['Richard Bailey'], spouses: [], children: [] },
+    { id: 'Ed Williams', name: "Ed Williams", parents: ['Harry Lewis-Irlam'], spouses: [], children: [] },
+    { id: 'Vusa Ndlovu', name: "Vusa Ndlovu", parents: ['Harry Lewis-Irlam'], spouses: [], children: [] },
+    { id: 'Matt A Davies', name: "Matt Davies", parents: ['Harry Lewis-Irlam'], spouses: [], children: [] },
+    { id: 'Tom Nash', name: "Tom Nash", parents: ['Joe Corwan'], spouses: [], children: [] },
+    { id: 'Sam Sherwood', name: "Sam Sherwood", parents: ['Joe Corwan'], spouses: [], children: ['Jack Coope', 'Tom Grainger', 'Alex Brown'] },
+    { id: 'Jack Coope', name: "Jack Coope", parents: ['Sam Sherwood'], spouses: [], children: [] },
+    { id: 'Tom Grainger', name: "Tom Grainger", parents: ['Sam Sherwood'], spouses: [], children: ['Natalie Lane', 'Kieran Parker', 'Sam Smyth'] },
+    { id: 'Alex Brown', name: "Alex Brown", parents: ['Sam Sherwood'], spouses: [], children: ['Holly Arrowsmith', 'Gina Harris'] },
+    { id: 'Natalie Lane', name: "Natalie Lane", parents: ['Tom Grainger'], spouses: [], children: [] },
+    { id: 'Kieran Parker', name: "Kieran Parker", parents: ['Tom Grainger'], spouses: [], children: ['Paulina Kingmane', 'Joshua Hjowell', 'Harry Ellis', "Liam O'Shea", 'Alex Brown'] },
+    { id: 'Sam Smyth', name: "Sam Smyth", parents: ['Tom Grainger'], spouses: [], children: [] },
+    { id: 'Holly Arrowsmith', name: "Holly Arrowsmith", parents: ['Alex Brown'], spouses: [], children: [] },
+    { id: 'Gina Harris', name: "Gina Harris", parents: ['Alex Brown'], spouses: [], children: [] },
+    { id: 'Paulina Kingmane', name: "Paulina Kingmane", parents: ['Kieran Parker'], spouses: [], children: ['Charlie King', 'Emmanuel Ojo'] },
+    { id: 'Joshua Hjowell', name: "Joshua Hjowell", parents: ['Kieran Parker'], spouses: [], children: ['Ryan Tomilnson', 'Tom Honer', 'Anish Gurung'] },
+    { id: 'Harry Ellis', name: "Harry Ellis", parents: ['Kieran Parker'], spouses: [], children: [] },
+    { id: "Liam O'Shea", name: "Liam O'Shea", parents: ['Kieran Parker'], spouses: [], children: ['Richard Ansell', 'Alex Gargrave', 'Ioan Ekland'] },
+    { id: 'Alex Brown', name: "Alex Brown", parents: ['Kieran Parker'], spouses: [], children: [] },
+    { id: 'Charlie King', name: "Charlie King", parents: ['Paulina Kingmane'], spouses: [], children: [] },
+    { id: 'Emmanuel Ojo', name: "Emmanuel Ojo", parents: ['Paulina Kingmane'], spouses: [], children: [] },
+    { id: 'Ryan Tomilnson', name: "Ryan Tomilnson", parents: ['Joshua Hjowell'], spouses: [], children: [] },
+    { id: 'Tom Honer', name: "Tom Honer", parents: ['Joshua Hjowell'], spouses: [], children: [] },
+    { id: 'Anish Gurung', name: "Anish Gurung", parents: ['Joshua Hjowell'], spouses: [], children: [] },
+    { id: 'Richard Ansell', name: "Richard Ansell", parents: ["Liam O'Shea"], spouses: [], children: [] },
+    { id: 'Alex Gargrave', name: "Alex Gargrave", parents: ["Liam O'Shea"], spouses: [], children: [] },
+    { id: 'Ioan Ekland', name: "Ioan Ekland", parents: ["Liam O'Shea"], spouses: [], children: ['Belal Ouachan', 'Matthew Mulvaney'] },
+    { id: 'Belal Ouachan', name: "Belal Ouachan", parents: ['Ioan Ekland'], spouses: [], children: [] },
+    { id: 'Matthew Mulvaney', name: "Matthew Mulvaney", parents: ['Ioan Ekland'], spouses: [], children: ['Raful', 'Will Moore', 'Callum Pegg', 'Matt B Davies'] },
+    { id: 'Raful', name: "Raful", parents: ['Matthew Mulvaney'], spouses: [], children: [] },
+    { id: 'Will Moore', name: "Will Moore", parents: ['Matthew Mulvaney'], spouses: [], children: ['Carwyn Draycott'] },
+    { id: 'Callum Pegg', name: "Callum Pegg", parents: ['Matthew Mulvaney'], spouses: [], children: ['Patrick Wellings', 'Carlos McFarvey', 'Bracker Payne'] },
+    { id: 'Matt B Davies', name: "Matt Davies", parents: ['Matthew Mulvaney'], spouses: [], children: [] },
+    { id: 'Carwyn Draycott', name: "Carwyn Draycott", parents: ['Will Moore'], spouses: [], children: ['Felix Rhode'] },
+    { id: 'Patrick Wellings', name: "Patrick Wellings", parents: ['Callum Pegg'], spouses: [], children: [] },
+    { id: 'Carlos McFarvey', name: "Carlos McFarvey", parents: ['Callum Pegg'], spouses: [], children: [] },
+    { id: 'Bracker Payne', name: "Bracker Payne", parents: ['Callum Pegg'], spouses: [], children: [] },
+    { id: 'Felix Rhode', name: "Felix Rhode", parents: ['Carwyn Draycott'], spouses: [], children: [] },
+    { id: 'Cara Myres', name: "Cara Myres", parents: [], spouses: [], children: ['Jonny Clegg', 'Ian Hunt'] },
+    { id: 'Jonny Clegg', name: "Jonny Clegg", parents: ['Cara Myres'], spouses: [], children: [] },
+    { id: 'Ian Hunt', name: "Ian Hunt", parents: ['Cara Myres'], spouses: [], children: ['Amy Phillips', 'Luke Quinn'] },
+    { id: 'Amy Phillips', name: "Amy Phillips", parents: ['Ian Hunt'], spouses: [], children: [] },
+    { id: 'Luke Quinn', name: "Luke Quinn", parents: ['Ian Hunt'], spouses: [], children: ['Matt Swift', 'Mitch Nunn', 'Kieran Reck'] },
+    { id: 'Matt Swift', name: "Matt Swift", parents: ['Luke Quinn'], spouses: [], children: [] },
+    { id: 'Mitch Nunn', name: "Mitch Nunn", parents: ['Luke Quinn'], spouses: [], children: [] },
+    { id: 'Kieran Reck', name: "Kieran Reck", parents: ['Luke Quinn'], spouses: [], children: ['Ellie Roach', 'Gwen Jones', "Clair O'Brien", 'Ben Campbell'] },
+    { id: 'Ellie Roach', name: "Ellie Roach", parents: ['Kieran Reck'], spouses: [], children: [] },
+    { id: 'Gwen Jones', name: "Gwen Jones", parents: ['Kieran Reck'], spouses: [], children: [] },
+    { id: "Clair O'Brien", name: "Clair O'Brien", parents: ['Kieran Reck'], spouses: [], children: [] },
+    { id: 'Ben Campbell', name: "Ben Campbell", parents: ['Kieran Reck'], spouses: [], children: ['Ben Thomson', 'Sara Whitehorn', 'Hattie Roxborough', 'Manar Arikat'] },
+    { id: 'Ben Thomson', name: "Ben Thomson", parents: ['Ben Campbell'], spouses: [], children: [] },
+    { id: 'Sara Whitehorn', name: "Sara Whitehorn", parents: ['Ben Campbell'], spouses: [], children: ['Will Jefferies', 'Will Hickling', 'Neil Luscombe'] },
+    { id: 'Hattie Roxborough', name: "Hattie Roxborough", parents: ['Sara Whitehorn'], spouses: [], children: [] },
+    { id: 'Manar Arikat', name: "Manar Arikat", parents: ['Sara Whitehorn'], spouses: [], children: [] },
+    { id: 'Will Jefferies', name: "Will Jefferies", parents: ['Sara Whitehorn'], spouses: [], children: ['Will Hickling', 'Neil Luscombe'] },
+    { id: 'Will Hickling', name: "Will Hickling", parents: ['Will Jefferies'], spouses: [], children: [] },
+    { id: 'Neil Luscombe', name: "Neil Luscombe", parents: ['Will Jefferies'], spouses: [], children: ['Joe Trigg', 'Kelly Charlton', 'Kayleigh Marks', 'Jamie Pain'] },
+    { id: 'Joe Trigg', name: "Joe Trigg", parents: ['Neil Luscombe'], spouses: [], children: [] },
+    { id: 'Kelly Charlton', name: "Kelly Charlton", parents: ['Neil Luscombe'], spouses: [], children: [] },
+    { id: 'Kayleigh Marks', name: "Kayleigh Marks", parents: ['Neil Luscombe'], spouses: [], children: ['Jayden Olden'] },
+    { id: 'Jayden Olden', name: "Jayden Olden", parents: ['Kayleigh Marks'], spouses: [], children: ['82', 'Zade Azzi'] },
+    { id: 'Sam Le Marquand', name: "Sam Le Marquand", parents: ['Jayden Olden'], spouses: [], children: [] },
+    { id: 'Zade Azzi', name: "Zade Azzi", parents: ['Jayden Olden'], spouses: [], children: [] },
+    { id: 'Jamie Pain', name: "Jamie Pain", parents: ['Neil Luscombe'], spouses: [], children: ['Dan Lindsley'] },
+    { id: 'Dan Lindsley', name: "Dan Lindsley", parents: ['Jamie Pain'], spouses: [], children: ['Kai Pettifer', 'Megan Johns'] },
+    { id: 'Kai Pettifer', name: "Kai Pettifer", parents: ['Dan Lindsley'], spouses: [], children: ['James Smith', 'Hollie Hughes', 'Matt Simmons'] },
+    { id: 'Megan Johns', name: "Megan Johns", parents: ['Dan Lindsley'], spouses: [], children: [] },
+    { id: 'James Smith', name: "James Smith", parents: ['Kai Pettifer'], spouses: [], children: [] },
+    { id: 'Hollie Hughes', name: "Hollie Hughes", parents: ['Kai Pettifer'], spouses: [], children: [] },
+    { id: 'Matt Simmons', name: "Matt Simmons", parents: ['Kai Pettifer'], spouses: [], children: [] },
+    { id: 'Heidi Erhe', name: "Heidi Erhe", parents: [], spouses: [], children: ['Antonio Sawaya', 'Max Deeble', 'Emily Seaman'] },
+    { id: 'Antonio Sawaya', name: "Antonio Sawaya", parents: ['Heidi Erhe'], spouses: [], children: [] },
+    { id: 'Max Deeble', name: "Max Deeble", parents: ['Heidi Erhe'], spouses: [], children: [] },
+    { id: 'Emily Seaman', name: "Emily Seaman", parents: ['Heidi Erhe'], spouses: [], children: ['Callum Rail', 'Jordan Wright', 'Ben Gooding'] },
+    { id: 'Callum Rail', name: "Callum Rail", parents: ['Emily Seaman'], spouses: [], children: [] },
+    { id: 'Jordan Wright', name: "Jordan Wright", parents: ['Emily Seaman'], spouses: [], children: [] },
+    { id: 'Ben Gooding', name: "Ben Gooding", parents: ['Emily Seaman'], spouses: [], children: ['Alexi Antoniou', 'Anna Elson'] },
+    { id: 'Alexi Atoniou', name: "Alexi Antoniou", parents: ['Ben Gooding'], spouses: [], children: [] },
+    { id: 'Anna Elson', name: "Anna Elson", parents: ['Ben Gooding'], spouses: [], children: ['Lauren Bostic'] },
+    { id: 'Lauren Bostic', name: "Lauren Bostic", parents: ['Anna Elson'], spouses: [], children: ['Henry Jackson', 'Tara Morgan'] },
+    { id: 'Henry Jackson', name: "Henry Jackson", parents: ['Lauren Bostic'], spouses: [], children: [] },
+    { id: 'Tara Morgan', name: "Tara Morgan", parents: ['Lauren Bostic'], spouses: [], children: ['Rebbecca Downey'] },
+    { id: 'Rebbecca Downey', name: "Rebbecca Downey", parents: ['Tara Morgan'], spouses: [], children: ['Crispin Low'] },
+    { id: 'Crispin Low', name: "Crispin Low", parents: ['Rebbecca Downey'], spouses: [], children: ['Rob Winton'] },
+    { id: 'Rob Winton', name: "Rob Winton", parents: ['Crispin Low'], spouses: [], children: [] },
+    { id: 'Nick Conan', name: "Nick Conan", parents: [], spouses: [], children: ['Carl Bashford'] },
+    { id: 'Carl Bashford', name: "Carl Bashford", parents: ['Nick Conan'], spouses: [], children: ['Josie Manley', 'Mark Forrester', 'James Joy'] },
+    { id: 'Josie Manley', name: "Josie Manley", parents: ['Carl Bashford'], spouses: [], children: [] },
+    { id: 'Mark Forrester', name: "Mark Forrester", parents: ['Carl Bashford'], spouses: [], children: ['Howard Richards', 'Joe Smith', 'Matt Galvin'] },
+    { id: 'James Joy', name: "James Joy", parents: ['Carl Bashford'], spouses: [], children: ['Matt HollyHurst', 'Siamak Rezazadeh', 'Gemma Gorrie', 'Roberto Payne'] },
+    { id: 'Howard Richards', name: "Howard Richards", parents: ['Mark Forrester'], spouses: [], children: [] },
+    { id: 'Joe Smith', name: "Joe Smith", parents: ['Mark Forrester'], spouses: [], children: [] },
+    { id: 'Matt Galvin', name: "Matt Galvin", parents: ['Mark Forrester'], spouses: [], children: [] },
+    { id: 'Matt HollyHurst', name: "Matt Hollyhurst", parents: ['James Joy'], spouses: [], children: [] },
+    { id: 'Siamak Rezazadeh', name: "Siamak Rezazadeh", parents: ['James Joy'], spouses: [], children: [] },
+    { id: 'Gemma Gorrie', name: "Gemma Gorrie", parents: ['James Joy'], spouses: [], children: [] },
+    { id: 'Roberto Payne', name: "Roberto Payne", parents: ['James Joy'], spouses: [], children: ['Steve Bates'] },
+    { id: 'Steve Bates', name: "Steve Bates", parents: ['Roberto Payne'], spouses: [], children: [] },
+    { id: 'Joe Hollyhurst', name: "Joe Hollyhurst", parents: ['Roberto Payne'], spouses: [], children: ['Lydia Davies'] },
+    { id: 'Lydia Davies', name: "Lydia Davies", parents: ['Joe Hollyhurst'], spouses: [], children: ['Ioana Pidgen', 'Riley Hagen', 'Erin Good'] },
+    { id: 'Ioana Pidgen', name: "Iona Pidgen", parents: ['Lydia Davies'], spouses: [], children: [] },
+    { id: 'Riley Hagen', name: "Riley Hagen", parents: ['Lydia Davies'], spouses: [], children: ['Ethan Humphries', 'Mikel Walsh', 'Adam Case-Legge'] },
+    { id: 'Erin Good', name: "Erin Good", parents: ['Lydia Davies'], spouses: [], children: ['Alex Stratton'] },
+    { id: 'Ethan Humphries', name: "Ethan Humphries", parents: ['Riley Hagen'], spouses: [], children: [] },
+    { id: 'Mikel Walsh', name: "Mikel Walsh", parents: ['Riley Hagen'], spouses: [], children: ['Ryan Constable', 'Jae Taylor', 'Alex Muffet'] },
+    { id: 'Adam Case-Legge', name: "Adam Case-Legge", parents: ['Riley Hagen'], spouses: [], children: ['Chris Baynes', 'Sam Richardon', 'Ben Barthomolew'] },
+    { id: 'Alex Stratton', name: "Alex Stratton", parents: ['Erin Good'], spouses: [], children: ['Shalika De Freitas'] },
+    { id: 'Ryan Constable', name: "Ryan Constable", parents: ['Mikel Walsh'], spouses: [], children: [] },
+    { id: 'Jae Taylor', name: "Jae Taylor", parents: ['Mikel Walsh'], spouses: [], children: [] },
+    { id: 'Alex Muffet', name: "Alex Muffet", parents: ['Mikel Walsh'], spouses: [], children: [] },
+    { id: 'Chris Baynes', name: "Chris Baynes", parents: ['Adam Case-Legge'], spouses: [], children: ['Ella Silvester', 'Tom Lacey'] },
+    { id: 'Sam Richardon', name: "Sam Richardon", parents: ['Adam Case-Legge'], spouses: [], children: ['Maeve Cotter'] },
+    { id: 'Ben Barthomolew', name: "Ben Barthomolew", parents: ['Adam Case-Legge'], spouses: [], children: ['Gracie Pratchett', 'Havish Patel'] },
+    { id: 'Shalika De Freitas', name: "Shalika De Freitas", parents: ['Alex Stratton'], spouses: [], children: [] },
+    { id: 'Ella Silvester', name: "Ella Silvester", parents: ['Chris Baynes'], spouses: [], children: [] },
+    { id: 'Tom Lacey', name: "Tom Lacey", parents: ['Chris Baynes'], spouses: [], children: [] },
+    { id: 'Maeve Cotter', name: "Maeve Cotter", parents: ['Sam Richardon'], spouses: [], children: [] },
+    { id: 'Gracie Pratchett', name: "Gracie Pratchett", parents: ['Ben Barthomolew'], spouses: [], children: [] },
+    { id: 'Havish Patel', name: "Havish Patel", parents: ['Ben Barthomolew'], spouses: [], children: [] },
+  ];
+  
